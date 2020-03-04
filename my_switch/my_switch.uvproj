@@ -427,14 +427,14 @@
               <FilePath>.\startup_rvmdk.S</FilePath>
             </File>
             <File>
-              <FileName>my_switch.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\my_switch.c</FilePath>
-            </File>
-            <File>
               <FileName>driverlib.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\..\..\driverlib\rvmdk\driverlib.lib</FilePath>
+            </File>
+            <File>
+              <FileName>my_switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\my_switch.c</FilePath>
             </File>
           </Files>
         </Group>

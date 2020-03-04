@@ -4,6 +4,7 @@
 #include "driverlib/sysctl.h"
 
 #define 	RED_MASK 		0x02
+#define 	GREEN_MASK		0x08
 //*****************************************************************************
 //
 //!
@@ -31,8 +32,8 @@ PortFunctionInit(void)
     // Enable the GPIO pin for the red LED (PF1).  Set the direction as output, and
     // enable the GPIO pin for digital function.
     //
-    GPIO_PORTF_DIR_R |= 0x02;
-    GPIO_PORTF_DEN_R |= 0x02;
+    GPIO_PORTF_DIR_R |= 0x08;
+    GPIO_PORTF_DEN_R |= 0x08;
 
 }
 
@@ -44,7 +45,7 @@ int main(void)
 		PortFunctionInit();
 	
     // Turn on the LED.
-    GPIO_PORTF_DATA_R |= 0x02;
+    GPIO_PORTF_DATA_R |= 0x08;
 
     
     //
@@ -53,9 +54,10 @@ int main(void)
     while(1)
     {
         // Delay for a bit.
-				SysCtlDelay(2000000);	
+				SysCtlDelay(10000000);	
 
         // Toggle the LED.
-        GPIO_PORTF_DATA_R ^=RED_MASK;
+        GPIO_PORTF_DATA_R ^=GREEN_MASK;
+				//GPIO_PORTF_DATA_R ^= 0x02; //either use the RED_MASK variable or could give it an immediate value
     }
 }
